@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Compra - Academia Fit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        header .logo h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ffdd57;
+        }
+
+        main.compra {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 30px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .produto-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .produto-imagem img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .produto-detalhes {
+            text-align: center;
+        }
+
+        .produto-detalhes h3 {
+            font-size: 2rem;
+            color: #1a73e8;
+            margin-bottom: 15px;
+        }
+
+        .produto-detalhes p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            font-size: 1.8rem;
+            color: #28a745;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        .pagamento {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .pagamento h3 {
+            font-size: 1.8rem;
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .opcao-pagamento {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .opcao-pagamento label {
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .btn-finalizar {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .btn-finalizar:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #1a73e8;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            width: 100%;
+            margin-top: 40px;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            main.compra {
+                padding: 20px;
+            }
+
+            .produto-info, .pagamento {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Academia Fit</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Voltar aos Produtos</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="compra">
+        <section class="produto-info">
+            <div class="produto-imagem">
+                <img id="produto-img" src="img/barrinha.jpg" alt="Produto">
+            </div>
+            <div class="produto-detalhes">
+                <h3 id="produto-nome">Produto</h3>
+                <p id="produto-descricao">Descrição do produto.</p>
+                <p id="produto-preco" class="preco">R$ 39,00</p>
+            </div>
+        </section>
+
+        <section class="pagamento">
+            <h3>Escolha uma forma de pagamento</h3>
+            <form action="#" method="post">
+                <div class="opcao-pagamento">
+                    <label>
+                        <input type="radio" name="pagamento" value="pix" id="pix">
+                        <span>PIX</span>
+                    </label>
+                </div>
+                <div class="opcao-pagamento">
+                    <label>
+                        <input type="radio" name="pagamento" value="cartao" id="cartao">
+                        <span>Cartão de Crédito</span>
+                    </label>
+                </div>
+                <div class="opcao-pagamento">
+                    <label>
+                        <input type="radio" name="pagamento" value="boleto" id="boleto">
+                        <span>Boleto Bancário</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn-finalizar">Finalizar Compra</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Academia Fit. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const produto = params.get('produto');
+        
+        function carregarProduto(produto) {
+            const produtoNome = document.getElementById('produto-nome');
+            const produtoDescricao = document.getElementById('produto-descricao');
+            const produtoPreco = document.getElementById('produto-preco');
+            const produtoImg = document.getElementById('produto-img');
+            
+            switch (produto) {
+                case 'Vitamina':
+                    produtoNome.textContent = 'Vitamina';
+                    produtoDescricao.textContent = 'Ajuda.';
+                    produtoPreco.textContent = '$38,40';
+                    produtoImg.src = 'https://via.placeholder.com/300x200';
+                    break;
+            }
+        }
+
+        if (produto) {
+            carregarProduto(produto);
+        }
+    </script>
+</body>
+</html>
